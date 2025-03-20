@@ -80,8 +80,40 @@ for (let key in person) {
 
 // 1. Understanding Event Handlers
 
-// Example (Inline HTML Event Handler):
 
-document.getElementById("btn").addEventListener("click", function () {
+
+document.getElementById("myButton").addEventListener("click", function (event) {
     alert("button clicked!");
+})
+
+
+// 2. Using Mouse Events 
+
+let box = document.getElementById("box");
+box.addEventListener("mouseover", function () {
+    box.style.backgroundColor = "blue"
+})
+
+box.addEventListener("mouseout", function () {
+    box.style.backgroundColor = "red"
+})
+
+
+// 3. Using Keyboard Events
+
+document.getElementById("textInput").addEventListener("keydown", function (event) {
+    console.log("Key Pressed:" + event.key);
+})
+
+// 4. Using the onLoad and onUnload Events
+
+// window.addEventListener("beforeunload", function (event) {
+//     event.returnValue = "Are you sure you want to leave?"
+// })
+
+// 5. Using onclick to Change <div> Appearance
+
+
+document.getElementById("changeBtn").addEventListener("click",function () {
+    document.getElementById("colorBox").style.backgroundColor = "orange"
 })
