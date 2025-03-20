@@ -79,3 +79,9 @@ for (let key in person) {
 
 
 // 1. Understanding Event Handlers
+
+// Example (Inline HTML Event Handler):
+
+document.getElementById("btn").addEventListener("click", function () {
+    alert("button clicked!");
+})
