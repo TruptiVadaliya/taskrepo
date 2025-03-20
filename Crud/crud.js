@@ -1,6 +1,6 @@
 var form = document.getElementById("myForm"),
     imgInput = document.querySelector(".img"),
-    file = document.querySelector("imgInput"),
+    file = document.querySelector("#imgInput"),
     name = document.querySelector("name"),
     age = document.querySelector("age"),
     city = document.querySelector("city"),
@@ -15,8 +15,11 @@ var form = document.getElementById("myForm"),
 let getData = localStorage.getItem('userProfile') ? JSON.parse(localStorage.getItem('userProfile')) : []
 
 let isData = false, editId
-
-file.onChange = function () {
+file?.addEventListener("change", function () {
+    console.log("File selected:", this.files[0]); // Debugging output
+});
+file.onchange = function () {
+    console.log("hgfhgfghf", file.files[0])
     if (file.files[0].size < 1000000) {
         var fileReader = new FileReader();
 
@@ -30,3 +33,20 @@ file.onChange = function () {
         alert("this file is too large!");
     }
 }
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const information = {
+        picture: imgInput.src == undefined ? "img/user-icon.webp" : imgInput.src,
+        employeeName: name.value,
+        employeeAge: age.value,
+        employeeCity: city.value,
+        employeeEmail: email.value,
+        employeePhone: phone.value,
+        employeePost: post.value,
+        startDate: sData.value
+    }
+
+    // if(!isEdit)
+})
