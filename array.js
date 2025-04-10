@@ -108,3 +108,49 @@ console.log(chars.toString());
 let arra1 = [1, 2];
 let arra2 = [3, 4];
 console.log(arra1.concat(arra2));
+
+
+
+// // function outerFunction(){
+// //   let count = 0;
+// //   return function innerFunction(){
+// //     count++;
+// //     console.log(count);
+// //   }
+// // }const counter= outerFunction()
+// // counter()
+// // counter()
+
+
+// console.log(this);
+
+// const obj = {
+//   name:"abc",
+//   greet:
+//     function(){
+//       console.log(this.name);
+//     }
+// }
+// obj.greet()
+
+
+// const obj = {
+//   name: "Alice",
+//   greet: function () {
+//     console.log(this.name);
+//   },
+// };
+// obj.greet()
+
+
+
+function debounce(fn, delay) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn(...args), delay);
+    };
+  }
+  
+  window.addEventListener("resize", debounce(() => console.log("Resized!"), 500));
+  
