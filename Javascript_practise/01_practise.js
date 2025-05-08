@@ -246,6 +246,9 @@
 // let grade = (score >= 90) ? "A+":(score >= 80)? "A":(score >= 70)?"B":"F"
 // console.log(grade);
 
+
+//===================  function ==================//
+
 //================  Function Declaration (Named Function) =============//
 
 // function greet(name) {
@@ -354,3 +357,5 @@
 // for (let color of colors) {
 //   console.log(color);
 // }
+
+

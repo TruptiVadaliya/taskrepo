@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD with LocalStorage</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 800px;
+        margin: auto;
+      }
+      input,
+      button {
+        padding: 8px;
+        margin: 5px;
+      }
+      input[type="text"],
+      input[type="email"] {
+        width: 200px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+      }
+      .actions button {
+        margin-right: 5px;
+      }
+      .search-bar {
+        margin: 10px 0;
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>User Management (CRUD + localStorage)</h2>
+
+    <form id="userForm">
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <button type="submit">Save</button>
+      <span class="error" id="formError"></span>
+    </form>
+
+    <div class="search-bar">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name or email..."
+      />
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="userTable"></tbody>
+    </table>
+
+    <script>
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      let editIndex = null;
+
+      const form = document.getElementById("userForm");
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const errorEl = document.getElementById("formError");
+      const searchInput = document.getElementById("searchInput");
+      const table = document.getElementById("userTable");
+
+      function saveToStorage() {
+        localStorage.setItem("users", JSON.stringify(users));
+      }
+
+      function renderTable(filter = "") {
+        table.innerHTML = "";
+        const filteredUsers = users.filter(
+          (user) =>
+            user.name.toLowerCase().includes(filter.toLowerCase()) ||
+            user.email.toLowerCase().includes(filter.toLowerCase())
+        );
+
+        if (filteredUsers.length === 0) {
+          table.innerHTML = "<tr><td colspan='3'>No users found</td></tr>";
+          return;
+        }
+
+        filteredUsers.forEach((user, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td class="actions">
+            <button onclick="editUser(${index})">Edit</button>
+            <button onclick="deleteUser(${index})">Delete</button>
+          </td>
+        `;
+          table.appendChild(row);
+        });
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+
+        if (!name || !email) {
+          errorEl.textContent = "Both fields are required.";
+          return;
+        }
+
+        errorEl.textContent = "";
+
+        if (editIndex === null) {
+          users.push({ name, email }); // Create
+        } else {
+          users[editIndex] = { name, email }; // Update
+          editIndex = null;
+        }
+
+        saveToStorage();
+        form.reset();
+        renderTable(searchInput.value);
+      });
+
+      window.editUser = function (index) {
+        const user = users[index];
+        nameInput.value = user.name;
+        emailInput.value = user.email;
+        editIndex = index;
+      };
+
+      window.deleteUser = function (index) {
+        const confirmDelete = confirm(
+          "Are you sure you want to delete this user?"
+        );
+        if (confirmDelete) {
+          users.splice(index, 1); // Delete
+          saveToStorage();
+          renderTable(searchInput.value);
+        }
+      };
+
+      searchInput.addEventListener("input", () => {
+        renderTable(searchInput.value);
+      });
+
+      // Initial render
+      renderTable();
+    </script>
+  </body>
+</html>
