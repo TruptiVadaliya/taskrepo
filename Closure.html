@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: black ; color: white;">
+    <!-- <button id="orange">Orange</button>
+    <button id="green">Green</button> -->
+
+    <!-- <div id="parent">
+      <button id="child">click me</button>
+    </div> -->
+
+    <!-- <ul id="parent">
+      <li>List 1</li>
+      <li>List 2</li>
+      <li>List 3</li>
+      <li>List 4</li>
+      <li>List 5</li> -->
+    </ul>
+  </body>
+  <script>
+    //   function outer() {
+    //     let outerLet = "123";
+    //     console.log("outerLet", outerLet);
+    //     function inner() {
+    //       let innerLet = "456";
+    //       console.log("innerLet", innerLet);
+    //     }
+    //     inner();
+    //   }
+    //   outer();
+
+    // function makeFunc(){
+    //     const name = "mozila";
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+    // const myFunc = makeFunc();
+    // myFunc();
+
+    // function makeFunc(){
+    //     const name= "hello";
+    //     function displayName(){
+    //         console.log(name);;
+    //     }
+    //     return displayName;
+    // }
+    // const myFunc = makeFunc();
+    // myFunc()
+  </script>
+
+  <script>
+    // document.getElementById("orange").onclick = function () {
+    //   document.body.style.backgroundColor = "orange";
+    // };
+    // document.getElementById("green").onclick = function () {
+    //   document.body.style.backgroundColor = "green";
+    // };
+
+    // function clickHandler(color) {
+    //   return function () {
+    //     document.body.style.backgroundColor = `${color}`;
+    //   };
+    // }
+    // document.getElementById("orange").onclick = clickHandler("orange");
+    // document.getElementById("green").onclick = clickHandler("green");
+
+    // greet();
+    // function greet() {
+    //   console.log("morning");
+    // }
+
+    // function sayHello(name) {
+    //   return `hello, ${name}`;
+    // }
+    // function greetName(callback) {
+    //   const name = "john";
+    //   console.log(callback(name));
+    // }
+    // greetName(sayHello)
+
+    // function multiplier(factor) {
+    //   return function (number) {
+    //     return number * factor;
+    //   };
+    // }
+    // const double =multiplier(3);
+    // console.log(double(4));
+
+    // document.getElementById('parent').onclick = function(){
+    //   console.log('parent clicked');
+    // }
+
+    // document.getElementById('child').onclick = function(){
+    //   console.log('child clicked');
+    //   // Additional functionality can be added here
+    // }
+
+    // document
+    //   .getElementById("parent")
+    //   .addEventListener("click", function (event) {
+    //     if (event.target && event.target.nodeName === "LI") {
+    //       console.log(
+    //         "list item clicked ",
+    //         event.target.textContent,
+    //         "was clicked"
+    //       );
+    //     }
+    //   });
+  </script>
+  <script>
+    // function longTask (){
+    //   for(let i=0;i<1e9;i++){}
+    // }
+    // console.log("start");
+    // longTask();
+    // console.log("end");
+
+    // function hello(){
+    //   console.log("hello");
+    // }
+
+    // setTimeout(hello,4000)
+
+
+    // function getData(dataId,getNextData){
+    //   setTimeout(()=>{
+    //     console.log("data", dataId);
+    //     if(getNextData){
+    //       getNextData();
+    //     }
+    //   },2000);
+    // }
+    // getData(1,()=>{
+    //   getData(2)
+    // })
+
+    // if(0.1 +0.2 == 0.3){
+    //   console.log("true");
+    // }else{
+    //   console.log("false");
+    // }
+
+
+    // const promise = new Promise((resolve, reject)=>{
+    //   console.log("hello");
+    //   // resolve(123);
+    //   reject("some eror");
+    // })
+
+    function getData (dataId,getNextData){
+      return new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+          console.log("data",dataId);
+          if(getNextData){
+            getNextData();
+          }
+        },2000)
+      });
+    }
+    
+    
+  </script>
+</html>
