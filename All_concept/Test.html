@@ -1,0 +1,368 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .bio h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bio p {
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            color: #fff;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container hero" id="about">
+        <img src="img/img2.jpeg" alt="Your Image" />
+        <div class="bio">
+            <h1>John Doe</h1>
+            <p>I'm a passionate Frontend Developer with experience in creating beautiful and responsive web applications
+                using HTML, CSS, JavaScript, and React.js. I love building intuitive user interfaces and solving design
+                challenges.</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>Contact Me:</p>
+        <div class="contact-links">
+            <a href="mailto:john@example.com">Email</a> |
+            <a href="https://linkedin.com/in/johndoe" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/johndoe" target="_blank">GitHub</a>
+        </div>
+        <p>&copy; 2025 John Doe</p>
+    </footer>
+
+</body>
+
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Web Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .gender, .interests {
+      margin-bottom: 1rem;
+    }
+
+    .gender label,
+    .interests label {
+      font-weight: normal;
+      margin-right: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Registration Form</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <div class="gender">
+        <label>Gender:</label>
+        <label><input type="radio" name="gender" value="male" required /> Male</label>
+        <label><input type="radio" name="gender" value="female" /> Female</label>
+        <label><input type="radio" name="gender" value="other" /> Other</label>
+      </div>
+
+      <div class="interests">
+        <label>Interests:</label>
+        <label><input type="checkbox" name="interest" value="coding" /> Coding</label>
+        <label><input type="checkbox" name="interest" value="music" /> Music</label>
+        <label><input type="checkbox" name="interest" value="sports" /> Sports</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Table</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .pricing-container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .plan {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 280px;
+    }
+
+    .plan:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .plan h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-size: 2rem;
+      color: #007bff;
+      margin: 1rem 0;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .features li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .plan button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .plan button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .plan {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="pricing-container">
+    <!-- Basic Plan -->
+    <div class="plan">
+      <h2>Basic</h2>
+      <p class="price">$9/mo</p>
+      <ul class="features">
+        <li>1 User</li>
+        <li>10 Projects</li>
+        <li>Email Support</li>
+      </ul>
+      <button>Select</button>
+    </div>
+
+    <!-- Pro Plan -->
+    <div class="plan">
+      <h2>Pro</h2>
+      <p class="price">$29/mo</p>
+      <ul class="features">
+        <li>5 Users</li>
+        <li>50 Projects</li>
+        <li>Priority Support</li>
+      </ul>
+      <button>Select</button>
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div class="plan">
+      <h2>Enterprise</h2>
+      <p class="price">$99/mo</p>
+      <ul class="features">
+        <li>Unlimited Users</li>
+        <li>Unlimited Projects</li>
+        <li>24/7 Support</li>
+      </ul>
+      <button>Select</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
